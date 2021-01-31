@@ -1,0 +1,3 @@
+= form_for @project, url: project_path(@project), method: :put do |form|
+    = form.text_field :title, { placeholder: 'Project title' }
+    = form.submit 'Update project'

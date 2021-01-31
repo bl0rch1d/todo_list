@@ -1,0 +1,7 @@
+- @projects.each do |project|
+    %h1= project.title
+    %h6= project.user_id
+    = link_to 'Edit', edit_project_path(project)
+    = link_to 'Delete', project_path(project), method: :delete
+
+= link_to 'New project', new_project_path
