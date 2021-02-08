@@ -2,6 +2,14 @@
     %h1= project.title
     %h6= project.user_id
     = link_to 'Edit', edit_project_path(project)
-    = link_to 'Delete', project_path(project), method: :delete
+    = link_to 'Delete', project_path(project), method: :delete, data: { confirm: 'Are you sure?' }
+
+    - project.tasks.each do |task|
+        %h1= task.name
+        %h6= task.project_id
+        = link_to 'Edit', edit_project_task_path(project, task)
+        = link_to 'Delete', project_task_path(project, task), method: :delete, data: { confirm: 'Are you sure?' }
+
+    = link_to 'New task', new_project_task_path(project)
 
 = link_to 'New project', new_project_path

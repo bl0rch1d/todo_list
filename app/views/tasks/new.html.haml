@@ -1,0 +1,3 @@
+= form_for @task, url: project_tasks_path(@task.project_id), method: :post do |form|
+    = form.text_field :name, { placeholder: 'Task name' }
+    = form.submit 'Create task'
